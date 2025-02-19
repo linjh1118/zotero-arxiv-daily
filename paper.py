@@ -155,7 +155,7 @@ class ArxivPaper:
             if match:
                 conclusion = match.group(0)
         llm = get_llm()
-        prompt = """Given the title, abstract, introduction and the conclusion (if any) of a paper in latex format, generate a one-sentence TLDR summary in __LANG__:
+        prompt = """根据论文的标题、摘要、引言和结论，用中文总结出背景及动机、方法或贡献，实验简要结论（像顶级会议上的一个poster那样）。 注意，用"__LANG__" 进行输出。 
         
         \\title{__TITLE__}
         \\begin{abstract}__ABSTRACT__\\end{abstract}
